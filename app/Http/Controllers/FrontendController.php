@@ -118,7 +118,41 @@ class FrontendController extends Controller
     } catch (Exception $e) {
         return redirect()->back()->with('error', 'Midtrans Error: ' . $e->getMessage());
     }
-}
+    }
+    // CALLBACK UNTUK MIDTRANS
+    public function callback(Request $request)
+    {
+        $notif = new Notification();
+
+        $transactionStatus = $notif->transaction_status;
+        $paymentType = $notif->payment_type;
+        $fraudStatus = $notif->fraud_status;
+        $orderId = $notif->order_id;
+
+        $transaction_id = str_replace('LX-', '', $orderId);
+        $transaction = Transaction::find($transaction_id);
+
+        if (!$transaction) {
+            return response()->json(['error' => 'Transaction not found.'], 404);
+        }
+
+        if ($transactionStatus == 'capture') {
+            if ($paymentType == 'credit_card') {
+                $transaction->status = ($fraudStatus == 'challenge') ? 'pending' : 'success';
+            }
+        } elseif ($transactionStatus == 'settlement') {
+            $transaction->status = 'success';
+        } elseif ($transactionStatus == 'pending') {
+            $transaction->status = 'pending';
+        } elseif (in_array($transactionStatus, ['deny', 'expire', 'cancel'])) {
+            $transaction->status = 'failed';
+        }
+
+        $transaction->save();
+
+        return response()->json(['message' => 'Transaction status updated']);
+    }
+    
 
     public function success(Request $request)
     {
