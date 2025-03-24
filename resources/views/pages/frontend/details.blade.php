@@ -38,7 +38,7 @@
                     <img
                       src="{{ Storage::url($item->url) }}"
                       alt="front"
-                      class="object-cover w-full h-full rounded-lg"
+                      class="object-contain  w-full h-full rounded-lg"
                     />
                   </div>  
                 @endforeach
@@ -50,7 +50,7 @@
                 <img
                   src="{{ $product->galleries()->exists() ? Storage::url($product->galleries->first()->url) : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN88B8AAsUB4ZtvXtIAAAAASUVORK5CYII=' }}"
                   alt="front"
-                  class="object-cover w-full h-full rounded-lg"
+                  class="object-contain  w-full h-full rounded-lg"
                 />
               </div>
             </div>

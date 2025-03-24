@@ -191,7 +191,7 @@
                 <img
                   src="{{ $product->galleries()->exists() ? Storage::url($product->galleries->first()->url) : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN88B8AAsUB4ZtvXtIAAAAASUVORK5CYII=' }}"
                   alt=""
-                  class="w-full h-full object-cover object-center"
+                  class="w-full h-full object-contain object-center"
                 />
               </div>
               <h5 class="text-lg font-semibold mt-4">{{ $product->name }}</h5>

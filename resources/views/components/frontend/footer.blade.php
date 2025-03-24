@@ -4,7 +4,7 @@
     <div class="flex justify-center mb-8">
         <img
         src="/frontend/images/content/logo.png"
-        alt="Luxspace | Fulfill your house with beautiful furniture"
+        alt="FurniCraft | Fulfill your house with beautiful furniture"
         />
     </div>
     <aside class="container mx-auto">
@@ -94,7 +94,7 @@
 <!-- START: FOOTER -->
 <footer class="flex text-center px-4 py-8 justify-center">
     <p class="text-sm">
-    Copyright 2021 • All Rights Reserved LuxSpace by BuildWith Angga
+    Copyright 2021 • All Rights Reserved FurniCraft 
     </p>
 </footer>
 <!-- END: FOOTER -->
