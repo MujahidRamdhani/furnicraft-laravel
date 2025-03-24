@@ -88,35 +88,37 @@ class FrontendController extends Controller
         Config::$isSanitized = config('services.midtrans.isSanitized');
         Config::$is3ds = config('services.midtrans.is3ds');
 
-        // Setup midtrans variable
-        $midtrans = array(
-            'transaction_details' => array(
-                'order_id' =>  'LX-' . $transaction->id,
-                'gross_amount' => (int) $transaction->total_price,
-            ),
-            'customer_details' => array(
-                'first_name'    => $transaction->name,
-                'email'         => $transaction->email
-            ),
-            'enabled_payments' => array('gopay','bank_transfer'),
-            'vtweb' => array()
-        );
+        // Set up Midtrans payment data
+    $midtransParams = [
+        'transaction_details' => [
+            'order_id' => 'LX-' . $transaction->id,
+            'gross_amount' => (int) $transaction->total_price,
+        ],
+        'customer_details' => [
+            'first_name' => $transaction->name,
+            'email' => $transaction->email,
+        ],
+        'enabled_payments' => ['gopay', 'bank_transfer'],
+        'callbacks' => [
+            'finish' => route('checkout-success'),
+        ],
+        'vtweb' => [],
+    ];
 
-        try {
-            // Ambil halaman payment midtrans
-            $paymentUrl = Snap::createTransaction($midtrans)->redirect_url;
+    try {
+        // Create transaction and get payment URL
+        $paymentUrl = Snap::createTransaction($midtransParams)->redirect_url;
 
-            $transaction->payment_url = $paymentUrl;
-            $transaction->save();
+        // Save payment URL to transaction
+        $transaction->payment_url = $paymentUrl;
+        $transaction->save();
 
-            // Redirect ke halaman midtrans
-            return redirect($paymentUrl);
-        }
-        catch (Exception $e) {
-            return $e;
-        }
-
+        // Redirect to payment page
+        return redirect($paymentUrl);
+    } catch (Exception $e) {
+        return redirect()->back()->with('error', 'Midtrans Error: ' . $e->getMessage());
     }
+}
 
     public function success(Request $request)
     {

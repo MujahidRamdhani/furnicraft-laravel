@@ -169,103 +169,80 @@
                   />
                 </div>
 
-                <div class="flex flex-col mb-4">
-                  <label for="complete-name" class="text-sm mb-2"
-                    >Choose Courier</label
-                  >
-                  <div class="flex -mx-2 flex-wrap">
-                    <div class="px-2 w-6/12 h-24 mb-4">
-                      <button
-                        type="button"
-                        data-value="fedex"
-                        data-name="courier"
-                        class="border border-gray-200 focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full h-full focus:outline-none"
-                      >
-                        <img
-                          src="/frontend/images/content/logo-fedex.svg"
-                          alt="Logo Fedex"
-                          class="object-contain max-h-full"
-                        />
-                      </button>
-                    </div>
-                    <div class="px-2 w-6/12 h-24 mb-4">
-                      <button
-                        type="button"
-                        data-value="dhl"
-                        data-name="courier"
-                        class="border border-gray-200 focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full h-full focus:outline-none"
-                      >
-                        <img
-                          src="/frontend/images/content/logo-dhl.svg"
-                          alt="Logo dhl"
-                          class="object-contain max-h-full"
-                        />
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <!-- Choose Courier -->
+  <div class="flex flex-col mb-4">
+    <label class="text-sm mb-2">Choose Courier</label>
+    <div class="flex -mx-2 flex-wrap">
+      <div class="px-2 w-6/12 h-24 mb-4">
+        <button
+          type="button"
+          data-value="fedex"
+          data-name="courier"
+          class="courier-btn border border-gray-200 flex items-center justify-center rounded-xl bg-white w-full h-full focus:outline-none"
+        >
+          <img src="/frontend/images/content/logo-fedex.svg" alt="Logo Fedex" class="object-contain max-h-full" />
+        </button>
+      </div>
+      <div class="px-2 w-6/12 h-24 mb-4">
+        <button
+          type="button"
+          data-value="dhl"
+          data-name="courier"
+          class="courier-btn border border-gray-200 flex items-center justify-center rounded-xl bg-white w-full h-full focus:outline-none"
+        >
+          <img src="/frontend/images/content/logo-dhl.svg" alt="Logo dhl" class="object-contain max-h-full" />
+        </button>
+      </div>
+    </div>
+  </div>
 
-                <div class="flex flex-col mb-4">
-                  <label for="complete-name" class="text-sm mb-2"
-                    >Choose Payment</label
-                  >
-                  <div class="flex -mx-2 flex-wrap">
-                    <div class="px-2 w-6/12 h-24 mb-4">
-                      <button
-                        type="button"
-                        data-value="midtrans"
-                        data-name="payment"
-                        class="border border-gray-200 focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full h-full focus:outline-none"
-                      >
-                        <img
-                          src="/frontend/images/content/logo-midtrans.png"
-                          alt="Logo midtrans"
-                          class="object-contain max-h-full"
-                        />
-                      </button>
-                    </div>
-                    <div class="px-2 w-6/12 h-24 mb-4">
-                      <button
-                        type="button"
-                        data-value="mastercard"
-                        data-name="payment"
-                        class="border border-gray-200 focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full h-full focus:outline-none"
-                      >
-                        <img
-                          src="/frontend/images/content/logo-mastercard.svg"
-                          alt="Logo mastercard"
-                        />
-                      </button>
-                    </div>
-                    <div class="px-2 w-6/12 h-24 mb-4">
-                      <button
-                        type="button"
-                        data-value="bitcoin"
-                        data-name="payment"
-                        class="border border-gray-200 focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full h-full focus:outline-none"
-                      >
-                        <img
-                          src="/frontend/images/content/logo-bitcoin.svg"
-                          alt="Logo bitcoin"
-                          class="object-contain max-h-full"
-                        />
-                      </button>
-                    </div>
-                    <div class="px-2 w-6/12 h-24 mb-4">
-                      <button
-                        type="button"
-                        data-value="american-express"
-                        data-name="payment"
-                        class="border border-gray-200 focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full h-full focus:outline-none"
-                      >
-                        <img
-                          src="/frontend/images/content/logo-american-express.svg"
-                          alt="Logo american-logo-american-express"
-                        />
-                      </button>
-                    </div>
-                  </div>
-                </div>
+  <!-- Choose Payment -->
+  <div class="flex flex-col mb-4">
+    <label class="text-sm mb-2">Choose Payment</label>
+    <div class="flex -mx-2 flex-wrap">
+      <div class="px-2 w-6/12 h-24 mb-4">
+        <button
+          type="button"
+          data-value="midtrans"
+          data-name="payment"
+          class="payment-btn border border-gray-200 flex items-center justify-center rounded-xl bg-white w-full h-full focus:outline-none"
+        >
+          <img src="/frontend/images/content/logo-midtrans.png" alt="Logo midtrans" class="object-contain max-h-full" />
+        </button>
+      </div>
+      <div class="px-2 w-6/12 h-24 mb-4">
+        <button
+          type="button"
+          data-value="mastercard"
+          data-name="payment"
+          class="payment-btn border border-gray-200 flex items-center justify-center rounded-xl bg-white w-full h-full focus:outline-none"
+        >
+          <img src="/frontend/images/content/logo-mastercard.svg" alt="Logo mastercard" class="object-contain max-h-full" />
+        </button>
+      </div>
+      <div class="px-2 w-6/12 h-24 mb-4">
+        <button
+          type="button"
+          data-value="bitcoin"
+          data-name="payment"
+          class="payment-btn border border-gray-200 flex items-center justify-center rounded-xl bg-white w-full h-full focus:outline-none"
+        >
+          <img src="/frontend/images/content/logo-bitcoin.svg" alt="Logo bitcoin" class="object-contain max-h-full" />
+        </button>
+      </div>
+      <div class="px-2 w-6/12 h-24 mb-4">
+        <button
+          type="button"
+          data-value="american-express"
+          data-name="payment"
+          class="payment-btn border border-gray-200 flex items-center justify-center rounded-xl bg-white w-full h-full focus:outline-none"
+        >
+          <img src="/frontend/images/content/logo-american-express.svg" alt="Logo American Express" class="object-contain max-h-full" />
+        </button>
+      </div>
+    </div>
+  </div>
+
                 <div class="text-center">
                   <button
                     type="submit"
@@ -283,3 +260,27 @@
     </section>
     <!-- END: COMPLETE YOUR ROOM -->
 @endsection
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      function handleSelection(groupName) {
+        const buttons = document.querySelectorAll(`button[data-name="${groupName}"]`);
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Remove active styles from all buttons in the group
+            buttons.forEach((btn) => btn.classList.remove("border-red-500", "ring", "ring-red-200"));
+
+            // Add active styles to clicked button
+            this.classList.add("border-red-500", "ring", "ring-red-200");
+
+            // Optional: log selected value
+            console.log(`Selected ${groupName}:`, this.getAttribute("data-value"));
+          });
+        });
+      }
+
+      handleSelection("courier");
+      handleSelection("payment");
+    });
+  </script>
