@@ -1,0 +1,17 @@
+###
+curl -X POST https://furnicraft.mujahid-dev.my.id/midtrans/callback \
+  -H "Content-Type: application/json" \
+  -d '{
+    "transaction_time": "2025-03-24 18:00:00",
+    "transaction_status": "settlement",
+    "transaction_id": "d0580956-98a5-4cd7-adc8-4876f46b1673",
+    "status_message": "Settlement",
+    "status_code": "200",
+    "signature_key": "f8751c9d61324729a4ee4f0c9f8413ae85a3607d4fab8bc1511b7118656f496673b4d2baaed3f252e69fca75ad19c6c97f7afb1b49c97a33b6a54c157487fe5b5",
+    "payment_type": "bank_transfer",
+    "order_id": "LX-2",
+    "merchant_id": "G489003405",
+    "gross_amount": "150000.00",
+    "fraud_status": "accept",
+    "currency": "IDR"
+  }'
